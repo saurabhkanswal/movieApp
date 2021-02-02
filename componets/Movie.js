@@ -25,10 +25,6 @@ const Movie = ({details})=>{
 
 const styles = StyleSheet.create({
     container: {
-        // flex: 1,
-        // // display: 'flex',
-        // flexDirection: 'row',
-        // flexWrap: 'wrap',
         width: 200,
         height: 300,
         marginBottom: 25
