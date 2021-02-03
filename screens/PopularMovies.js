@@ -37,6 +37,9 @@ console.log('Ready to fetch.');
 const key = 'faf981d79c94b75d3c34a1b45c9330b9'
 const URL = `https://api.themoviedb.org/3/movie/popular?api_key=${key}&language=en-US&page=1`;
 
+
+
+
 const popularMovies= ({navigation})=> {
 
 const [popularMovies, setPopularMovies] = useState(null)
@@ -69,20 +72,15 @@ const fetchDetails = async()=>{
       <View style={styles.container}>
         <View style={styles.movieContainer}>
           {popularMovies.results.map((movieDetail)=>(
-            // <View key={movieDetail.id}>
             <Pressable  onPress={() => navigation.navigate('Details',{movieid: movieDetail.id})} key={movieDetail.id}>
             <Movie details={movieDetail} key={movieDetail.id}/>
             </Pressable>
-            // </View>
           ))}
         </View>
       </View>
       </ScrollView>
     );
-  }
-
-   
-  }
+  }}
 
   const styles = StyleSheet.create({
     

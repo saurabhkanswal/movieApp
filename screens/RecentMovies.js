@@ -5,7 +5,7 @@ import { Text,
 import Axios from 'axios'
 import MovieDetail from '../componets/MovieDetail'
 
-
+//This screen render latest movie
 const key = 'faf981d79c94b75d3c34a1b45c9330b9'
 const recentMovieURL = `https://api.themoviedb.org/3/movie/latest?api_key=${key}&language=en-US`;
 
@@ -22,7 +22,6 @@ const RecentMovies= ()=> {
       console.warn(error);
     }
   }
-  // console.log(recentMovies)
   useEffect(() => {
     fetchDetails();
   }, [])
@@ -41,23 +40,13 @@ const RecentMovies= ()=> {
         </View>
       </View>
     );
-  }
-
-   
-  }
+  }}
 
   const styles = StyleSheet.create({
-    
       container: {
         flex: 1,
-        // width: '100%',
-        // justifyContent: 'center',
-        // alignItems: 'center',
         backgroundColor: 'white'
       },
-      
-     
-      
   })
 
  

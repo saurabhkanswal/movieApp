@@ -8,6 +8,8 @@ import PopularMovies from './screens/PopularMovies'
 import RecentMovies from './screens/RecentMovies'
 import Details from './screens/Details'
 
+
+// Stack navigator for each tab
 const PopularMovieStack = createStackNavigator();
 function PopularMovieStackScreen() {
   return (
@@ -28,8 +30,9 @@ function PopularMovieStackScreen() {
   );
 }
 
-const Tab = createBottomTabNavigator();
 
+// Tab navigation
+const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
