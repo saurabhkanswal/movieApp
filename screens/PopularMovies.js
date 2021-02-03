@@ -69,11 +69,11 @@ const fetchDetails = async()=>{
       <View style={styles.container}>
         <View style={styles.movieContainer}>
           {popularMovies.results.map((movieDetail)=>(
-            <View key={movieDetail.id}>
-            <Pressable  onPress={() => navigation.navigate('Details',{movieid: movieDetail.id})}>
+            // <View key={movieDetail.id}>
+            <Pressable  onPress={() => navigation.navigate('Details',{movieid: movieDetail.id})} key={movieDetail.id}>
             <Movie details={movieDetail} key={movieDetail.id}/>
             </Pressable>
-            </View>
+            // </View>
           ))}
         </View>
       </View>

@@ -2,7 +2,6 @@ import React from 'react'
 import { Text, 
     StyleSheet,
     Image,
-    TouchableOpacity,
     View } from 'react-native';
 // import { TouchableOpacity } from 'react-native-gesture-handler';
 
@@ -11,15 +10,19 @@ const Movie = ({details})=>{
     // console.log(details)
     // console.log(details.poster_path)
     return(
+       
         <View style={styles.container}>
+            <View>
             <Image
                 source={{
-                    uri: `http://image.tmdb.org/t/p/w500${details.poster_path}`
+                    uri: `http://image.tmdb.org/t/p/w185${details.poster_path}`
                 }}
                 style = {styles.imageStyle}
             />
+            </View>
             <Text style={styles.fontStyle}>{details.original_title}</Text>
         </View>
+        
     );
 }
 
