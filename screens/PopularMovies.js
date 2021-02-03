@@ -6,6 +6,33 @@ import { Text,
   Pressable } from 'react-native';
 import Axios from 'axios'
 import Movie from '../componets/Movie'
+import { Service } from 'axios-middleware';
+
+// Middleware logging message in console
+const service = new Service(Axios);
+
+service.register({
+  //
+  onRequest(config) {
+    console.log('Request to API: SUCESS');
+    return config;
+  },
+  onSync(promise) {
+    console.log('Sync Done');
+    return promise;
+  },
+  onResponse(response) {
+    console.log('Response back: SUCCESS');
+    return response;
+  }
+});
+
+console.log('Ready to fetch.');
+
+
+
+
+
 
 const key = 'faf981d79c94b75d3c34a1b45c9330b9'
 const URL = `https://api.themoviedb.org/3/movie/popular?api_key=${key}&language=en-US&page=1`;
@@ -16,7 +43,7 @@ const [popularMovies, setPopularMovies] = useState(null)
   const fetchDetails = async()=>{
     try {
 
-          const {data} = await Axios.get(URL)
+          const {data} = await Axios.get(URL);
           const popularMovies = data;
           setPopularMovies(popularMovies);
           

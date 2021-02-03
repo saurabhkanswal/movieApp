@@ -25,7 +25,7 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen name="Popular Movies" component={PopularMovieStackScreen} />
-        <Tab.Screen name="Recent Movies" component={RecentMovies}/>
+        <Tab.Screen name="Latest Movie" component={RecentMovies}/>
       </Tab.Navigator>
     </NavigationContainer>
   );
