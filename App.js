@@ -12,8 +12,18 @@ const PopularMovieStack = createStackNavigator();
 function PopularMovieStackScreen() {
   return (
     <PopularMovieStack.Navigator>
-      <PopularMovieStack.Screen name="Popular Movies" component={PopularMovies} />
-      <PopularMovieStack.Screen name="Details" component={Details} />
+      <PopularMovieStack.Screen name="Popular Movies" component={PopularMovies} options={{
+        headerStyle: {
+            backgroundColor: '#535353',
+      },
+      headerTintColor: '#fff'
+    }}/>
+      <PopularMovieStack.Screen name="Details" component={Details} options={{
+        headerStyle: {
+            backgroundColor: '#535353',
+      },
+      headerTintColor: '#fff'
+    }}/>
     </PopularMovieStack.Navigator>
   );
 }

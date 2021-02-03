@@ -12,7 +12,7 @@ import { Service } from 'axios-middleware';
 const service = new Service(Axios);
 
 service.register({
-  //
+
   onRequest(config) {
     console.log('Request to API: SUCESS');
     return config;
@@ -22,7 +22,7 @@ service.register({
     return promise;
   },
   onResponse(response) {
-    console.log('Response back: SUCCESS');
+    console.log('Response back from API: SUCCESS');
     return response;
   }
 });
@@ -38,9 +38,10 @@ const key = 'faf981d79c94b75d3c34a1b45c9330b9'
 const URL = `https://api.themoviedb.org/3/movie/popular?api_key=${key}&language=en-US&page=1`;
 
 const popularMovies= ({navigation})=> {
+
 const [popularMovies, setPopularMovies] = useState(null)
 
-  const fetchDetails = async()=>{
+const fetchDetails = async()=>{
     try {
 
           const {data} = await Axios.get(URL);
